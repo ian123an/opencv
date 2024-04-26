@@ -1,0 +1,16 @@
+import cv2
+
+cap = cv2.VideoCapture('abc.mp4')
+#camera = cv2.VideoCapture(1)    #讀取電腦攝像頭
+
+while True:
+    ret, frame = cap.read()
+
+    if ret:
+        frame = cv2.resize(frame, (0, 0), fx=1.2, fy=1.2)
+        cv2.imshow('video', frame)
+    else:
+        break
+
+    if cv2.waitkey(10) == ord('q'):
+        break
