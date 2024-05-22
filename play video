@@ -1,7 +1,6 @@
 import cv2
 
 cap = cv2.VideoCapture('abc.mp4')
-#camera = cv2.VideoCapture(1)    #讀取電腦攝像頭
 
 while True:
     ret, frame = cap.read()
