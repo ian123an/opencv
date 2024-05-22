@@ -1,0 +1,8 @@
+import cv2
+
+img = cv2.imread('abc.jpg')
+
+newImg = img[50:500, 550:1170]
+
+cv2.imshow('newImg', newImg)
+cv2.waitKey(0)
