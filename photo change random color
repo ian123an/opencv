@@ -1,0 +1,16 @@
+import cv2
+import numpy as np
+import random
+
+img = cv2.imread('abc.jpg')
+
+for row in range(300):
+    for col in range(img.shape[1]):
+        img[row][col] = [random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)]
+
+cv2.imshow('img', img)
+cv2.waitKey(0)
+
+#print(img)   #列表的資料型態
+#print(type(img))      #告知是哪種資料型態
+#print(img.shape)     #陣列型態及大小
