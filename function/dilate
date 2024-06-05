@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+
+milkcoco = np.ones((3, 3), np.uint8)
+
+img = cv2.imread('abc.jpg')
+
+img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
+canny = cv2.Canny(img, 150, 200)
+dilate = cv2.dilate(canny, milkcoco, iterations = 1)   #目標圖片,  二維陣列, 膨脹次數
+
+cv2.imshow('canny', canny)
+cv2.imshow('dilate', dilate)
+
+cv2.waitKey(0)
