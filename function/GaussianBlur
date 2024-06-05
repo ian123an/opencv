@@ -1,0 +1,11 @@
+import cv2
+
+img = cv2.imread('abc.jpg')
+
+img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
+blur = cv2.GaussianBlur(img, (5, 5), 8)           #高斯模糊   第二個參數為和  以tuple表示   合的大小都需要是奇數    第三個參數為標準差
+
+cv2.imshow('img', img)
+cv2.imshow('blur', blur)
+
+cv2.waitKey(0)
