@@ -1,0 +1,18 @@
+import cv2
+import numpy as np
+
+Kiana = np.ones((3, 3), np.uint8)
+Mei = np.ones((3, 3), np.uint8)
+
+img = cv2.imread('abc.jpg')
+
+img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
+canny = cv2.Canny(img, 150, 200)    #邊緣檢測
+dilate = cv2.dilate(canny, Kiana, iterations = 1)   #加粗邊緣線條
+erode = cv2.erode(dilate, Mei, iterations = 1)  #削弱邊緣線條
+
+cv2.imshow('canny', canny)
+cv2.imshow('dilate', dilate)
+cv2.imshow('erode', erode)
+
+cv2.waitKey(0)
